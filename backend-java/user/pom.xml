@@ -11,5 +11,11 @@
 
     <artifactId>user</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.company</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
