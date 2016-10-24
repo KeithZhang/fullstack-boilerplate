@@ -1,4 +1,4 @@
-package com.company.project.users.user;
+package com.company.project.user.info;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
