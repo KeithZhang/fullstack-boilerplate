@@ -1,0 +1,46 @@
+{
+    "name": "@types/react",
+    "version": "15.0.21",
+    "description": "TypeScript definitions for React",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Asana",
+            "url": "https://asana.com"
+        },
+        {
+            "name": "AssureSign",
+            "url": "http://www.assuresign.com"
+        },
+        {
+            "name": "Microsoft",
+            "url": "https://microsoft.com"
+        },
+        {
+            "name": "John Reilly",
+            "url": "https://github.com/johnnyreilly/"
+        },
+        {
+            "name": "Benoit Benezech",
+            "url": "https://github.com/bbenezech"
+        },
+        {
+            "name": "Patricio Zavolinsky",
+            "url": "https://github.com/pzavolinsky"
+        },
+        {
+            "name": "Digiguru",
+            "url": "https://github.com/digiguru"
+        }
+    ],
+    "main": "",
+    "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "peerDependencies": {},
+    "typesPublisherContentHash": "c6233ff33670d4ab74cf982e58ee50ef079ee0181b422cfcda7ba2517bb0507a",
+    "typeScriptVersion": "2.2"
+}
