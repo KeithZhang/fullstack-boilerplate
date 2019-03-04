@@ -1,6 +1,12 @@
 import { NavigationScreenProp, NavigationState } from 'react-navigation';
 
-import { ThemeType } from './styles';
+import { ThemeType } from 'ui/styles';
 
 declare const YouNavigator: NavigationScreenProp<NavigationState>;
-declare const YouTheme: ThemeType;
+
+declare global {
+  interface Window {
+    [key: string]: any;
+  }
+  const YouTheme: ThemeType;
+}

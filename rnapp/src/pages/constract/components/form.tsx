@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { View, StyleSheet, TextInput, Button } from 'react-native';
 import { Formik, ErrorMessage, Field, withFormik } from 'formik';
 import { Text, Input, Divider, Icon } from 'react-native-elements';
-import { YouTheme } from '../../../ui/global';
+
 
 const FormItem = ({
   field, // { name, value, onChange, onBlur }

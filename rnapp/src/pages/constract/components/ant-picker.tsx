@@ -40,7 +40,7 @@ export default class PickerViewExample extends React.Component {
     );
   }
 
-  onChange = value => {
+  onChange = (value: any) => {
     this.setState({
       value
     });

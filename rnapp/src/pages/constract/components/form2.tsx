@@ -1,15 +1,17 @@
 import React, { Fragment } from 'react';
-import { Button } from 'react-native';
+import { Button, View } from 'react-native';
 import { Formik } from 'formik';
 
 import { FormikField, FormCellSelect } from 'ui';
 
-console.log('hello');
 const FormComponent = () => (
   <Formik
     initialValues={{ constractNo: '', customerName: '' }}
     validate={values => {
-      const errors = {};
+      const errors = {
+        constractNo: '',
+        customerName: ''
+      };
 
       if (!values.constractNo) {
         errors.constractNo = '合同编号必须填写';
@@ -24,25 +26,31 @@ const FormComponent = () => (
     onSubmit={values => {
       console.log('vallues...', values);
     }}
+    component={Form}
+  />
+);
+
+const Form = ({ handleSubmit }: { handleSubmit: any }) => (
+  <View
+    style={{
+      flex: 1,
+      marginTop: 50
+    }}
   >
-    {({ handleSubmit }) => (
-      <Fragment>
-        <FormCellSelect
-          name="constractNo"
-          label="合同编号"
-          placeholder="请输入合同编号"
-        />
+    <FormCellSelect
+      name="constractNo"
+      label="合同编号"
+      placeholder="请输入合同编号"
+    />
 
-        {/* <FormCellSelect
-          name="customerName"
-          label="客户名称"
-          placeholder="请输入客户名称"
-        /> */}
+    <FormikField
+      name="customerName"
+      label="客户名称"
+      placeholder="请输入客户名称"
+    />
 
-        <Button onPress={handleSubmit as any} title="Submit" />
-      </Fragment>
-    )}
-  </Formik>
+    <Button onPress={handleSubmit as any} title="Submit" />
+  </View>
 );
 
 export default FormComponent;

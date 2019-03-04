@@ -11,9 +11,12 @@ import Todos from './pages/todos';
 
 const store = createStore(rootReducer);
 
-export default class RootContainer extends Component {
-  _ref: Object;
+import { ThemeType } from 'ui/styles';
 
+// declare const YouNavigator: NavigationScreenProp<NavigationState>;
+declare const YouTheme: ThemeType;
+
+export default class RootContainer extends Component {
   componentDidMount() {
     // (global || window)['YouNavigator'] = (this._ref as any)._navigation;
   }
@@ -21,10 +24,10 @@ export default class RootContainer extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-        <Provider store={store}>
-          <StatusBar />
-          <Constract />
-        </Provider>
+        {/* <Provider store={store}> */}
+        <StatusBar />
+        <Constract />
+        {/* </Provider> */}
       </SafeAreaView>
     );
   }
