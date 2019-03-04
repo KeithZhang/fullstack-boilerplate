@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Button } from 'react-native';
 import { Formik } from 'formik';
 
-import { Field } from 'ui';
+import { FormikField, FormCellSelect } from 'ui';
 
 console.log('hello');
 const FormComponent = () => (
@@ -27,18 +27,17 @@ const FormComponent = () => (
   >
     {({ handleSubmit }) => (
       <Fragment>
-        <Field
+        <FormCellSelect
           name="constractNo"
           label="合同编号"
           placeholder="请输入合同编号"
-          rightIcon="right"
         />
 
-        <Field
+        {/* <FormCellSelect
           name="customerName"
           label="客户名称"
           placeholder="请输入客户名称"
-        />
+        /> */}
 
         <Button onPress={handleSubmit as any} title="Submit" />
       </Fragment>

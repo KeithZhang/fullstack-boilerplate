@@ -1,30 +1,15 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity
-} from 'react-native';
+import { StyleSheet, View, Text, TextInput } from 'react-native';
 import { ErrorMessage, connect, FormikContext } from 'formik';
 
 interface FieldProps {
   name: string;
   label: string;
-  rightIcon?: string;
-  rigntIconOnPress?: () => void;
   placeholder: string;
 }
 
 const Field = (props: FieldProps & { formik: FormikContext<any> }) => {
-  const {
-    formik,
-    name,
-    label,
-    rigntIconOnPress,
-    rightIcon,
-    placeholder
-  } = props;
+  const { formik, name, label, placeholder } = props;
 
   return (
     <View>

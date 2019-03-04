@@ -2,7 +2,5 @@ import { NavigationScreenProp, NavigationState } from 'react-navigation';
 
 import { ThemeType } from './styles';
 
-declare global {
-  const YouNavigator: NavigationScreenProp<NavigationState>;
-  const YouTheme: ThemeType;
-}
+declare const YouNavigator: NavigationScreenProp<NavigationState>;
+declare const YouTheme: ThemeType;
