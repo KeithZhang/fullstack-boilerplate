@@ -3,35 +3,14 @@ import { StyleSheet, View, TouchableOpacity, ViewStyle } from 'react-native';
 import { Modal, PickerView, Icon } from '@ant-design/react-native';
 import { ErrorMessage, connect, FormikContext } from 'formik';
 import { Text } from 'ui';
+import { PickerData } from '@ant-design/react-native/lib/picker/PropsType';
 
 interface FormikPickerProps {
+  data: PickerData[] | PickerData[][];
   name: string;
   label: string;
   placeholder: string;
 }
-
-const seasons = [
-  [
-    {
-      label: '2013',
-      value: '2013'
-    },
-    {
-      label: '2014',
-      value: '2014'
-    }
-  ],
-  [
-    {
-      label: '春',
-      value: '春'
-    },
-    {
-      label: '夏',
-      value: '夏'
-    }
-  ]
-];
 
 class FormikPicker extends Component<
   FormikPickerProps & { formik: FormikContext<any> }
@@ -42,8 +21,11 @@ class FormikPicker extends Component<
   };
 
   render() {
-    const { formik, name, label, placeholder } = this.props;
-
+    const { formik, data, name, label, placeholder } = this.props;
+    console.log('data...', data);
+    if (!data) {
+      return null;
+    }
     return (
       <View>
         <View
@@ -120,7 +102,7 @@ class FormikPicker extends Component<
           <PickerView
             onChange={formik.handleChange}
             value={this.state.value}
-            data={seasons}
+            data={data}
             cascade={false}
           />
         </Modal>

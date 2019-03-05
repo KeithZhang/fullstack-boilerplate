@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import rootReducer from './pages/redux-todos-demo/reducers';
+import rootReducer from './reducers';
 
 import Constract from './pages/constract';
 import UiDemo from './pages/ui-demo';
@@ -22,7 +22,7 @@ export default class RootContainer extends Component {
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
         <Provider store={store}>
           <StatusBar />
-          <UiDemo />
+          <Constract />
         </Provider>
       </SafeAreaView>
     );
