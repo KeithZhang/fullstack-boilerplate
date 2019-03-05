@@ -4,17 +4,13 @@ import { SafeAreaView } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import rootReducer from './pages/todos/reducers';
+import rootReducer from './pages/redux-todos-demo/reducers';
 
 import Constract from './pages/constract';
-import Todos from './pages/todos';
+import UiDemo from './pages/ui-demo';
+import ReduxTodosDemo from './pages/redux-todos-demo';
 
 const store = createStore(rootReducer);
-
-import { ThemeType } from 'ui/styles';
-
-// declare const YouNavigator: NavigationScreenProp<NavigationState>;
-declare const YouTheme: ThemeType;
 
 export default class RootContainer extends Component {
   componentDidMount() {
@@ -24,10 +20,10 @@ export default class RootContainer extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-        {/* <Provider store={store}> */}
-        <StatusBar />
-        <Constract />
-        {/* </Provider> */}
+        <Provider store={store}>
+          <StatusBar />
+          <Constract />
+        </Provider>
       </SafeAreaView>
     );
   }

@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import Form from './components/form';
+import AntModel from './components/ant-model';
 
 const Constract = () => (
   <View style={{ flex: 1 }}>
-    <Form />
+    <AntModel />
   </View>
 );
 

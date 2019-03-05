@@ -2,8 +2,7 @@ import React, { Fragment } from 'react';
 import { Button, View } from 'react-native';
 import { Formik } from 'formik';
 
-import { FormikField, FormikModelSelect } from 'ui';
-import { Provider, WingBlank, WhiteSpace } from '@ant-design/react-native';
+import { FormikField, FormCellSelect, FormikModelSelect } from 'ui';
 
 const FormComponent = () => (
   <Formik
@@ -32,13 +31,17 @@ const FormComponent = () => (
 );
 
 const Form = ({ handleSubmit }: { handleSubmit: any }) => (
-  <WingBlank style={{ flex: 1 }}>
+  <View
+    style={{
+      flex: 1,
+      marginTop: 50
+    }}
+  >
     <FormikModelSelect
       name="constractNo"
       label="合同编号"
       placeholder="请输入合同编号"
     />
-    <WhiteSpace style={{ borderBottomColor: 'red', borderBottomWidth: 1 }} />
 
     <FormikField
       name="customerName"
@@ -46,21 +49,8 @@ const Form = ({ handleSubmit }: { handleSubmit: any }) => (
       placeholder="请输入客户名称"
     />
 
-    <WhiteSpace />
-
-    <FormikModelSelect
-      name="constractNo"
-      label="合同编号"
-      placeholder="请输入合同编号"
-    />
-    <WhiteSpace />
-
     <Button onPress={handleSubmit as any} title="Submit" />
-  </WingBlank>
+  </View>
 );
 
-export default () => (
-  <Provider>
-    <FormComponent />
-  </Provider>
-);
+export default FormComponent;

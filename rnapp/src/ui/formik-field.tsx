@@ -12,7 +12,7 @@ const Field = (props: FieldProps & { formik: FormikContext<any> }) => {
   const { formik, name, label, placeholder } = props;
 
   return (
-    <Fragment>
+    <View>
       <View style={{ flexDirection: 'row', height: 44, marginLeft: 16 }}>
         <Text style={{ alignSelf: 'center', fontSize: 15 }}>{label}</Text>
 
@@ -50,7 +50,7 @@ const Field = (props: FieldProps & { formik: FormikContext<any> }) => {
           </Text>
         )}
       />
-    </Fragment>
+    </View>
   );
 };
 
