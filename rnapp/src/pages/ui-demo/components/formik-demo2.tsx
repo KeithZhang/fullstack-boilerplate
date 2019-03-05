@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Button, View } from 'react-native';
 import { Formik } from 'formik';
 
-import { FormikField, FormCellSelect, FormikModelSelect } from 'ui';
+import { FormikField, FormikPicker } from 'ui';
 
 const FormComponent = () => (
   <Formik
@@ -37,7 +37,7 @@ const Form = ({ handleSubmit }: { handleSubmit: any }) => (
       marginTop: 50
     }}
   >
-    <FormikModelSelect
+    <FormikPicker
       name="constractNo"
       label="合同编号"
       placeholder="请输入合同编号"

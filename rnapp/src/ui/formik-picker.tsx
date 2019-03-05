@@ -1,10 +1,10 @@
 import React, { Fragment, Component } from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, ViewStyle } from 'react-native';
 import { Modal, PickerView, Icon } from '@ant-design/react-native';
 import { ErrorMessage, connect, FormikContext } from 'formik';
 import { Text } from 'ui';
 
-interface FormikModelSelectProps {
+interface FormikPickerProps {
   name: string;
   label: string;
   placeholder: string;
@@ -33,18 +33,12 @@ const seasons = [
   ]
 ];
 
-class FormikModelSelect extends Component<
-  FormikModelSelectProps & { formik: FormikContext<any> }
+class FormikPicker extends Component<
+  FormikPickerProps & { formik: FormikContext<any> }
 > {
   state = {
     isVisible: false,
     value: undefined
-  };
-
-  onChange = value => {
-    this.setState({
-      value
-    });
   };
 
   render() {
@@ -62,7 +56,7 @@ class FormikModelSelect extends Component<
           <Text
             style={{
               alignSelf: 'center',
-              fontSize: 15
+              fontSize: YouTheme.font.subhead
             }}
           >
             {label}
@@ -71,7 +65,10 @@ class FormikModelSelect extends Component<
           <TouchableOpacity
             style={{
               flex: 1,
-              marginLeft: 50
+              marginLeft: 80,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center'
             }}
             onPress={() => {
               this.setState({
@@ -79,24 +76,15 @@ class FormikModelSelect extends Component<
               });
             }}
           >
-            <View
+            <Text
               style={{
-                backgroundColor: 'red',
-                flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'center'
+                color: YouTheme.color.text_caption,
+                alignItems: 'center'
               }}
             >
-              <Text
-                style={{
-                  color: YouTheme.color.text_caption,
-                  alignItems: 'center'
-                }}
-              >
-                {placeholder}
-              </Text>
-              <Icon name="down" size="md" />
-            </View>
+              {placeholder}
+            </Text>
+            <Icon name="down" size="md" />
           </TouchableOpacity>
         </View>
 
@@ -106,7 +94,7 @@ class FormikModelSelect extends Component<
             <Text
               style={{
                 alignSelf: 'flex-end',
-                fontSize: 16,
+                fontSize: YouTheme.font.subhead,
                 marginLeft: 16,
                 marginRight: 16,
                 marginTop: 8,
@@ -130,7 +118,7 @@ class FormikModelSelect extends Component<
           }}
         >
           <PickerView
-            onChange={this.onChange}
+            onChange={formik.handleChange}
             value={this.state.value}
             data={seasons}
             cascade={false}
@@ -142,6 +130,6 @@ class FormikModelSelect extends Component<
 }
 
 export default connect<
-  FormikModelSelectProps,
-  FormikModelSelectProps & { formik: FormikContext<any> }
->(FormikModelSelect);
+  FormikPickerProps,
+  FormikPickerProps & { formik: FormikContext<any> }
+>(FormikPicker);

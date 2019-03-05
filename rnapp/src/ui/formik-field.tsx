@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
-import { StyleSheet, View, Text, TextInput } from 'react-native';
+import { StyleSheet, View, TextInput } from 'react-native';
 import { ErrorMessage, connect, FormikContext } from 'formik';
+import { Text } from 'ui';
 
 interface FieldProps {
   name: string;
@@ -13,19 +14,28 @@ const Field = (props: FieldProps & { formik: FormikContext<any> }) => {
 
   return (
     <View>
-      <View style={{ flexDirection: 'row', height: 44, marginLeft: 16 }}>
-        <Text style={{ alignSelf: 'center', fontSize: 15 }}>{label}</Text>
+      <View
+        style={{
+          flexDirection: 'row',
+          height: 44
+        }}
+      >
+        <Text style={{ alignSelf: 'center', fontSize: YouTheme.font.subhead }}>
+          {label}
+        </Text>
 
         <View
           style={{
             flex: 1,
-            marginRight: 16,
-            marginLeft: 54
+            marginLeft: 80,
+            alignContent: 'flex-start',
+            alignItems: 'flex-start'
           }}
         >
           <TextInput
             style={{
-              fontSize: 16
+              fontSize: YouTheme.font.subhead,
+              paddingLeft: 0
             }}
             onChangeText={formik.handleChange(name)}
             value={formik.values[name]}
@@ -39,7 +49,7 @@ const Field = (props: FieldProps & { formik: FormikContext<any> }) => {
           <Text
             style={{
               alignSelf: 'flex-end',
-              fontSize: 16,
+              fontSize: YouTheme.font.subhead,
               marginLeft: 16,
               marginRight: 16,
               marginTop: 8,

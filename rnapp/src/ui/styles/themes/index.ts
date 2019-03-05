@@ -35,18 +35,17 @@ const color = {
 
 // 字体
 const font = {
-  // 一级标题，按钮
-  head: 17,
-  // 辅助文字
-  caption: 15,
-  // 二级标题
-  subhead: 14,
-  // 基础字号
-  base: 13,
-  // 辅助文字小
-  caption_sm: 12,
-  // 图标描述文字
-  icontext: 10
+  head: 17, // 一级标题，按钮
+
+  caption: 15, // 辅助文字
+
+  subhead: 14, // 二级标题
+
+  base: 13, // 基础字号
+
+  caption_sm: 12, // 辅助文字小
+
+  icontext: 10 // 图标描述文字
 };
 
 // 圆角

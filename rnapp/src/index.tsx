@@ -22,7 +22,7 @@ export default class RootContainer extends Component {
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
         <Provider store={store}>
           <StatusBar />
-          <Constract />
+          <UiDemo />
         </Provider>
       </SafeAreaView>
     );
