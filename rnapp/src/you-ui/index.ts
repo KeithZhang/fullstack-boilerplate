@@ -2,6 +2,7 @@ import './styles';
 import FormikField from './formik-field';
 import FormCellSelect from './formik-cell-select';
 import FormikPicker from './formik-picker';
-import Text from './text';
+import YouText from './text';
+import YouHeader from './header';
 
-export { FormikField, FormCellSelect, FormikPicker, Text };
+export { FormikField, FormCellSelect, FormikPicker, YouText, YouHeader };

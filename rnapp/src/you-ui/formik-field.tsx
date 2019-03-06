@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import { ErrorMessage, connect, FormikContext } from 'formik';
-import { Text } from 'ui';
+import { YouText } from 'you-ui';
 
 interface FieldProps {
   name: string;
@@ -20,9 +20,11 @@ const Field = (props: FieldProps & { formik: FormikContext<any> }) => {
           height: 44
         }}
       >
-        <Text style={{ alignSelf: 'center', fontSize: YouTheme.font.subhead }}>
+        <YouText
+          style={{ alignSelf: 'center', fontSize: YouTheme.font.subhead }}
+        >
           {label}
-        </Text>
+        </YouText>
 
         <View
           style={{
@@ -46,7 +48,7 @@ const Field = (props: FieldProps & { formik: FormikContext<any> }) => {
       <ErrorMessage
         name={name}
         render={msg => (
-          <Text
+          <YouText
             style={{
               alignSelf: 'flex-end',
               fontSize: YouTheme.font.subhead,
@@ -57,7 +59,7 @@ const Field = (props: FieldProps & { formik: FormikContext<any> }) => {
             }}
           >
             {msg}
-          </Text>
+          </YouText>
         )}
       />
     </View>

@@ -9,7 +9,7 @@ import {
   WhiteSpace
 } from '@ant-design/react-native';
 import { ErrorMessage, connect, FormikContext } from 'formik';
-import { Text } from 'ui';
+import { YouText } from 'you-ui';
 import { PickerData } from '@ant-design/react-native/lib/picker/PropsType';
 
 interface FormikPickerProps {
@@ -45,14 +45,14 @@ class FormikPicker extends Component<
             justifyContent: 'space-between'
           }}
         >
-          <Text
+          <YouText
             style={{
               alignSelf: 'center',
               fontSize: YouTheme.font.subhead
             }}
           >
             {label}
-          </Text>
+          </YouText>
 
           <TouchableOpacity
             style={{
@@ -68,7 +68,7 @@ class FormikPicker extends Component<
               });
             }}
           >
-            <Text
+            <YouText
               style={{
                 color:
                   formik.values[name][0] == -1
@@ -80,7 +80,7 @@ class FormikPicker extends Component<
               {formik.values[name][0] == -1
                 ? placeholder
                 : data[0][formik.values[name][0]]['label']}
-            </Text>
+            </YouText>
             <Icon name="down" size="md" />
           </TouchableOpacity>
         </View>
@@ -88,7 +88,7 @@ class FormikPicker extends Component<
         <ErrorMessage
           name={name}
           render={msg => (
-            <Text
+            <YouText
               style={{
                 alignSelf: 'flex-end',
                 fontSize: YouTheme.font.subhead,
@@ -99,7 +99,7 @@ class FormikPicker extends Component<
               }}
             >
               {msg}
-            </Text>
+            </YouText>
           )}
         />
 

@@ -6,7 +6,7 @@ import {
   WhiteSpace,
   Button
 } from '@ant-design/react-native';
-import { FormikField, FormikPicker } from 'ui';
+import { FormikField, FormikPicker } from 'you-ui';
 import { connect } from 'react-redux';
 
 import mapDispatchToProps from '../actions';

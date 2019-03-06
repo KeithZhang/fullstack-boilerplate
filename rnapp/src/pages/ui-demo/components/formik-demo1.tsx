@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Button, View } from 'react-native';
 import { Formik } from 'formik';
 
-import { FormikField, FormCellSelect, FormikPicker } from 'ui';
+import { FormikField, FormCellSelect, FormikPicker } from 'you-ui';
 
 const FormComponent = () => (
   <Formik
