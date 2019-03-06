@@ -1,6 +1,13 @@
-import React, { Fragment, Component } from 'react';
-import { StyleSheet, View, TouchableOpacity, ViewStyle } from 'react-native';
-import { Modal, PickerView, Icon } from '@ant-design/react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View, TouchableOpacity, Picker } from 'react-native';
+import {
+  Modal,
+  PickerView,
+  Icon,
+  Button,
+  WingBlank,
+  WhiteSpace
+} from '@ant-design/react-native';
 import { ErrorMessage, connect, FormikContext } from 'formik';
 import { Text } from 'ui';
 import { PickerData } from '@ant-design/react-native/lib/picker/PropsType';
@@ -17,12 +24,15 @@ class FormikPicker extends Component<
 > {
   state = {
     isVisible: false,
-    value: undefined
+    selectValue: [0]
   };
 
   render() {
     const { formik, data, name, label, placeholder } = this.props;
     console.log('data...', data);
+    console.log('formik...', formik);
+    console.log('formik.values[name][0]..', formik.values[name]);
+
     if (!data) {
       return null;
     }
@@ -60,11 +70,16 @@ class FormikPicker extends Component<
           >
             <Text
               style={{
-                color: YouTheme.color.text_caption,
+                color:
+                  formik.values[name][0] == -1
+                    ? YouTheme.color.text_caption
+                    : YouTheme.color.text_base,
                 alignItems: 'center'
               }}
             >
-              {placeholder}
+              {formik.values[name][0] == -1
+                ? placeholder
+                : data[0][formik.values[name][0]]['label']}
             </Text>
             <Icon name="down" size="md" />
           </TouchableOpacity>
@@ -99,12 +114,49 @@ class FormikPicker extends Component<
             });
           }}
         >
-          <PickerView
-            onChange={formik.handleChange}
-            value={this.state.value}
-            data={data}
-            cascade={false}
-          />
+          <View>
+            <WingBlank
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                paddingTop: 10
+              }}
+            >
+              <Button
+                type="ghost"
+                onPress={() => {
+                  this.setState({
+                    isVisible: false
+                  });
+                }}
+              >
+                取消
+              </Button>
+              <Button
+                type="ghost"
+                onPress={() => {
+                  this.setState({
+                    isVisible: false
+                  });
+                  formik.setFieldValue(name, this.state.selectValue);
+                }}
+              >
+                确认
+              </Button>
+            </WingBlank>
+
+            <PickerView
+              onChange={e => {
+                console.log('e..', e);
+                this.setState({
+                  selectValue: e
+                });
+              }}
+              value={this.state.selectValue}
+              data={data}
+              cascade={false}
+            />
+          </View>
         </Modal>
       </View>
     );

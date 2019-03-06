@@ -4,6 +4,19 @@ import { Formik } from 'formik';
 
 import { FormikField, FormikPicker } from 'ui';
 
+const data = [
+  [
+    {
+      label: '生产合同',
+      value: 0
+    },
+    {
+      label: '销售合同',
+      value: 1
+    }
+  ]
+];
+
 const FormComponent = () => (
   <Formik
     initialValues={{ constractNo: '', customerName: '' }}
@@ -38,9 +51,10 @@ const Form = ({ handleSubmit }: { handleSubmit: any }) => (
     }}
   >
     <FormikPicker
+      data={data}
       name="constractNo"
-      label="合同编号"
-      placeholder="请输入合同编号"
+      label="合同类型"
+      placeholder="请选择合同类型"
     />
 
     <FormikField

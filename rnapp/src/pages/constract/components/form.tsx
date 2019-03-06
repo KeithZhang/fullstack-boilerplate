@@ -28,15 +28,19 @@ class FormComponent extends Component<
     return (
       <Provider>
         <Formik
-          initialValues={{ constractNo: '', customerName: '', constractTypes }}
+          initialValues={{
+            customerName: '',
+            constractType: [-1],
+            constractTypes
+          }}
           validate={values => {
-            const errors = {
-              constractNo: '',
-              customerName: ''
-            };
+            const errors: {
+              constractType?: string;
+              customerName?: string;
+            } = {};
 
-            if (!values.constractNo) {
-              errors.constractNo = '合同编号必须填写';
+            if (values.constractType[0] == -1) {
+              errors.constractType = '合同编号必须填写';
             }
 
             if (!values.customerName) {
@@ -46,7 +50,7 @@ class FormComponent extends Component<
             return errors;
           }}
           onSubmit={values => {
-            console.log('values..', values);
+            this.props.submit(values);
           }}
           component={Form}
         />
@@ -56,14 +60,13 @@ class FormComponent extends Component<
 }
 
 const Form = ({ handleSubmit, values }: { handleSubmit: any; values: any }) => {
-  console.log('values..', values);
   return (
     <WingBlank style={{ flex: 1 }}>
       <FormikPicker
         data={values.constractTypes}
-        name="constractNo"
-        label="合同编号"
-        placeholder="请选择合同编号"
+        name="constractType"
+        label="合同类型"
+        placeholder="请选择合同类型"
       />
       <WhiteSpace
         style={{ borderTopColor: YouTheme.color.border, borderTopWidth: 1 }}

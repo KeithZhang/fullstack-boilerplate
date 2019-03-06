@@ -4,6 +4,13 @@ const mapDispatchToProps = dispatch => {
       dispatch({
         type: 'INIT'
       });
+    },
+
+    submit: formData => {
+      dispatch({
+        type: 'SUBMIT',
+        formData
+      });
     }
   };
 

@@ -1,4 +1,6 @@
 const initState = {
+  contstractNo: '',
+  customerName: '',
   constractTypes: [
     [
       {
