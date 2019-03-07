@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import 'normalize.css';
 
 import ShoppingCart from './shopping-cart';
-import { Address } from 'ui';
+import { Address } from 'ui/';
 
 export default class Root extends Component {
   state = {

@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-
-// import rootReducer from './reducers';
 
 import Constract from './pages/constract';
 import UiDemo from './pages/ui-demo';
 import ReduxTodosDemo from './pages/redux-todos-demo';
 import AuthNavigator from './navigator';
 
-// const store = createStore(rootReducer);
+import rootReducer from './reducers';
+const store = createStore(rootReducer);
 
 export default class RootContainer extends Component {
   _ref: any;
@@ -23,10 +22,10 @@ export default class RootContainer extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-        {/* <Provider store={store}> */}
-        <StatusBar />
-        <AuthNavigator ref={ref => (this._ref = ref)} />
-        {/* </Provider> */}
+        <Provider store={store}>
+          <StatusBar />
+          <AuthNavigator ref={ref => (this._ref = ref)} />
+        </Provider>
       </SafeAreaView>
     );
   }
