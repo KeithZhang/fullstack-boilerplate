@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>rnapp</string>
+	<string>rnapp-production</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -22,6 +22,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>CodePushDeploymentKey</key>
+	<string>AZGmWN6kHEgPlSwoeKVpFVGcuBFp4ksvOXqog</string>
+	<key>CodePushServerURL</key>
+	<string>http://code-push.youdetan.com</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -39,6 +43,11 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>antfill.ttf</string>
+		<string>antoutline.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -53,14 +62,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>CodePushDeploymentKey</key>
-	<string>AZGmWN6kHEgPlSwoeKVpFVGcuBFp4ksvOXqog</string>
-	<key>CodePushServerURL</key>
-	<string>http://code-push.youdetan.com</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>antfill.ttf</string>
-		<string>antoutline.ttf</string>
-	</array>
 </dict>
 </plist>

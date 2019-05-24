@@ -21,17 +21,6 @@ export default class Home extends Component {
           />
 
           <Image
-            source={require('assets/apple.png')}
-            style={{
-              height: 200,
-              width: Util.screenWidth - 40,
-              marginTop: 20,
-              marginLeft: 20,
-              marginRight: 20
-            }}
-          />
-
-          <Image
             source={require('assets/banana.png')}
             style={{
               height: 200,

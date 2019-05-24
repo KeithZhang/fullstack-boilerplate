@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { AsyncStorage, View } from 'react-native';
 import { YouText } from 'you-ui';
+
 // import { YouLoading } from 'you-ui';
 
 export default class AuthLoading extends Component {
@@ -17,7 +18,7 @@ export default class AuthLoading extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: 'blue' }}>
+      <View style={{ flex: 1 }}>
         {/* <YouLoading /> */}
 
         <YouText>loding</YouText>
