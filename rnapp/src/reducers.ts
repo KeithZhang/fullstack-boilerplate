@@ -1,3 +1,5 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({});
+import template from './pages/template/reducer';
+
+export default combineReducers({ template });

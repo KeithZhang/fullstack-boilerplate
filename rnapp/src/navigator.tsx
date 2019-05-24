@@ -5,7 +5,6 @@ import { createBottomTabNavigator, createStackNavigator, createSwitchNavigator }
 import AuthLoading from './pages/auth-loading';
 import Home from './pages/home';
 import Login from './pages/login';
-import UiDemo from './pages/ui-demo';
 import User from './pages/user';
 
 // 所有登录前的页面都在这里定义
@@ -22,7 +21,7 @@ const BootomTabNavigator = createBottomTabNavigator(
   {
     // 所有不需要隐藏tabbar的页面在这里定义
     Home: {
-      screen: UiDemo,
+      screen: Home,
       navigationOptions: {
         tabBarIcon: ({ focused }) => {
           return (

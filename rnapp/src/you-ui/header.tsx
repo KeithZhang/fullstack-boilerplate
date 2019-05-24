@@ -1,16 +1,9 @@
-import React, { Component } from 'react';
-import {
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  ViewStyle,
-  TextStyle
-} from 'react-native';
-
-import { Util } from 'you-kit';
-import Text from './text';
 import { Icon } from '@ant-design/react-native';
+import React, { Component } from 'react';
+import { StyleSheet, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { Util } from 'you-kit';
+
+import Text from './text';
 
 interface YouHeaderProps {
   /**
@@ -43,13 +36,15 @@ export default class YouHeader extends Component<YouHeaderProps, any> {
   static defaultProps = {
     back: false,
     leftTitle: '',
-    middleTtitle: '',
+    middleTitle: '',
     right: false,
     backgroundColor: '#ffffff'
   };
 
   render() {
     const { backgroundColor } = this.props;
+    console.log('this.props...', this.props);
+
     return (
       <View style={[styles.container, { backgroundColor }]}>
         {this.renderBack()}

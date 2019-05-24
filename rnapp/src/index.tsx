@@ -36,6 +36,6 @@ class RootContainer extends Component {
   }
 }
 
-export default CodePush({ checkFrequency: CodePush.CheckFrequency.MANUAL })(
-  RootContainer
-);
+export default CodePush({
+  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME
+})(RootContainer);
