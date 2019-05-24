@@ -4,7 +4,6 @@ import { createBottomTabNavigator, createStackNavigator, createSwitchNavigator }
 
 import AuthLoading from './pages/auth-loading';
 import Home from './pages/home';
-import Kanban from './pages/kanban';
 import Login from './pages/login';
 import UiDemo from './pages/ui-demo';
 import User from './pages/user';
@@ -29,23 +28,6 @@ const BootomTabNavigator = createBottomTabNavigator(
           return (
             <IconOutline
               name="home"
-              color={
-                focused
-                  ? YouTheme.color.brand_primary
-                  : YouTheme.color.text_caption
-              }
-            />
-          );
-        }
-      }
-    },
-    Kanban: {
-      screen: Kanban,
-      navigationOptions: {
-        tabBarIcon: ({ focused }) => {
-          return (
-            <IconOutline
-              name="user"
               color={
                 focused
                   ? YouTheme.color.brand_primary
