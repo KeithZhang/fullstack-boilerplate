@@ -3,7 +3,7 @@ import { FlatList, Text } from 'react-native';
 
 const FlatListDemo = () => (
   <FlatList
-    data={[{ key: 'a' }, { key: 'b' }]}
+    data={[{ key: 'a' }, { key: 'b' }, { key: 'c' }, { key: 'd' }]}
     renderItem={({ item }) => <Text>{item.key}</Text>}
   />
 );

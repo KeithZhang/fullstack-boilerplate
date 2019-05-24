@@ -1,28 +1,18 @@
+import { IconOutline } from '@ant-design/icons-react-native';
 import React from 'react';
-import {
-  createBottomTabNavigator,
-  createStackNavigator,
-  createSwitchNavigator
-} from 'react-navigation';
-import { IconFill, IconOutline } from '@ant-design/icons-react-native';
+import { createBottomTabNavigator, createStackNavigator, createSwitchNavigator } from 'react-navigation';
 
 import AuthLoading from './pages/auth-loading';
-import Login from './pages/login';
 import Home from './pages/home';
 import Kanban from './pages/kanban';
-import User from './pages/user';
-
+import Login from './pages/login';
 import UiDemo from './pages/ui-demo';
+import User from './pages/user';
 
 // 所有登录前的页面都在这里定义
 const AuthStack = createStackNavigator(
   {
-    // LoginRegister,
     Login
-    // ForgotPassword,
-    // SmsCodeLogin,
-    // RegisterInvite,
-    // Register
   },
   {
     headerMode: 'none'
@@ -100,13 +90,6 @@ const AppStack = createStackNavigator(
     BootomTabs: BootomTabNavigator
 
     // 所有需要隐藏tabbar的页面都在这里定义
-    // SummaryDetail,
-    // UserSetting,
-    // OrderList,
-    // UserSummary,
-    // UserSummaryMore,
-    // UserFansList,
-    // BindWechat
   },
   {
     headerMode: 'none'

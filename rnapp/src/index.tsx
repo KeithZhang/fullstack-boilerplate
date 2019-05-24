@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
+import CodePush from 'react-native-code-push';
 import { SafeAreaView } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import Constract from './pages/constract';
-import UiDemo from './pages/ui-demo';
-import ReduxTodosDemo from './pages/redux-todos-demo';
 import AuthNavigator from './navigator';
-
 import rootReducer from './reducers';
+
 const store = createStore(rootReducer);
 
-export default class RootContainer extends Component {
+class RootContainer extends Component {
   _ref: any;
 
   componentDidMount() {
     window['YouNavigator'] = (this._ref as any)._navigation;
+
+    CodePush.sync({
+      installMode: CodePush.InstallMode.IMMEDIATE,
+      updateDialog: {
+        title: '新版本'
+      }
+    });
   }
 
   render() {
@@ -30,3 +35,7 @@ export default class RootContainer extends Component {
     );
   }
 }
+
+export default CodePush({ checkFrequency: CodePush.CheckFrequency.MANUAL })(
+  RootContainer
+);
