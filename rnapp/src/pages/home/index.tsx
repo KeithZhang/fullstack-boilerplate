@@ -19,7 +19,7 @@ export default class Home extends Component {
               marginRight: 20
             }}
           />
-
+          {/* 
           <Image
             source={require('assets/banana.png')}
             style={{
@@ -29,7 +29,7 @@ export default class Home extends Component {
               marginLeft: 20,
               marginRight: 20
             }}
-          />
+          /> */}
         </ScrollView>
       </View>
     );
