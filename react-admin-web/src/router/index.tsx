@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
 
+import BasicLayout from '../layout';
 import GoodsList from '../pages/goods-list';
 import Home from '../pages/home';
 import Login from '../pages/login';
@@ -11,7 +12,7 @@ import routes from './routes';
 export default class Router extends Component {
   render() {
     console.log('routes..', routes);
-    const isLogin = false;
+    const isLogin = true;
 
     return (
       <BrowserRouter>
@@ -20,12 +21,12 @@ export default class Router extends Component {
             path="/panther"
             render={data =>
               isLogin ? (
-                <div>
+                <BasicLayout>
                   <Route exact path="/panther" component={Home} />
                   <Route path="/panther/goods-list" component={GoodsList} />
                   <Route path="/panther/order-list" component={OrderList} />
                   <Link to="/login">good-list</Link>
-                </div>
+                </BasicLayout>
               ) : (
                 <Redirect to={{ pathname: '/login' }} />
               )
