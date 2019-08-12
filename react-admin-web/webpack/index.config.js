@@ -3,14 +3,15 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: 'index.tsx',
+  entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: 'index_bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index_bundle.js',
+    publicPath: '/'
   },
   resolve: {
     alias: {
-      ui: path.resolve(__dirname, 'ui')
+      pages: path.resolve(__dirname, './src/pages')
     },
     extensions: ['*', '.tsx', '.ts', '.js', '.json']
   },
@@ -31,13 +32,31 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|svg|gif)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: '[name]_[hash].[ext]',
+            limit: '1024'
+          }
+        }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|mp4)$/,
+        loader: 'file-loader'
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: '',
-      template: './index.ejs'
+      title: 'test',
+      favicon: path.resolve(__dirname, '../public', 'favicon.ico'),
+      template: path.resolve(__dirname, 'index.ejs')
     })
-  ]
+  ],
+  devServer: {
+    historyApiFallback: true
+  }
 };

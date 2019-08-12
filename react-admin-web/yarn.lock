@@ -789,6 +789,19 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/history@*":
+  version "4.7.2"
+  resolved "https://registry.npm.taobao.org/@types/history/download/@types/history-4.7.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fhistory%2Fdownload%2F%40types%2Fhistory-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
+  integrity sha1-DmcOolTVWSQbbus4lPh1SZHnMiA=
+
+"@types/hoist-non-react-statics@^3.3.0":
+  version "3.3.1"
+  resolved "https://registry.npm.taobao.org/@types/hoist-non-react-statics/download/@types/hoist-non-react-statics-3.3.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fhoist-non-react-statics%2Fdownload%2F%40types%2Fhoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
+  integrity sha1-ESSq/lEYy1kZd66xzqrtEHDrA58=
+  dependencies:
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.npm.taobao.org/@types/minimatch/download/@types/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -811,6 +824,33 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-redux@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-7.1.1.tgz?cache=0&sync_timestamp=1561706806554&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact-redux%2Fdownload%2F%40types%2Freact-redux-7.1.1.tgz#eb01e89cf71cad77df9f442b819d5db692b997cb"
+  integrity sha1-6wHonPccrXffn0QrgZ1dtpK5l8s=
+  dependencies:
+    "@types/hoist-non-react-statics" "^3.3.0"
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
+    redux "^4.0.0"
+
+"@types/react-router-dom@^4.3.4":
+  version "4.3.4"
+  resolved "https://registry.npm.taobao.org/@types/react-router-dom/download/@types/react-router-dom-4.3.4.tgz#63a7a8558129d2f4ff76e4bdd099bf4b98e25a0d"
+  integrity sha1-Y6eoVYEp0vT/duS90Jm/S5jiWg0=
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+    "@types/react-router" "*"
+
+"@types/react-router@*", "@types/react-router@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.npm.taobao.org/@types/react-router/download/@types/react-router-5.0.3.tgz#855a1606e62de3f4d69ea34fb3c0e50e98e964d5"
+  integrity sha1-hVoWBuYt4/TWnqNPs8DlDpjpZNU=
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+
 "@types/react-slick@^0.23.4":
   version "0.23.4"
   resolved "https://registry.npm.taobao.org/@types/react-slick/download/@types/react-slick-0.23.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact-slick%2Fdownload%2F%40types%2Freact-slick-0.23.4.tgz#c97e2a9e7e3d1933c68593b8e82752fab1e8ce53"
@@ -825,6 +865,13 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
+
+"@types/redux-thunk@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/@types/redux-thunk/download/@types/redux-thunk-2.1.0.tgz#bc2b6e972961831afb82a9bf4f06726e351f9416"
+  integrity sha1-vCtulylhgxr7gqm/TwZybjUflBY=
+  dependencies:
+    redux-thunk "*"
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
@@ -2544,6 +2591,14 @@ figgy-pudding@^3.5.1:
   resolved "https://registry.npm.taobao.org/figgy-pudding/download/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
   integrity sha1-hiRwESkBxyeg5JWoB0S9W6odZ5A=
 
+file-loader@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npm.taobao.org/file-loader/download/file-loader-4.2.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffile-loader%2Fdownload%2Ffile-loader-4.2.0.tgz#5fb124d2369d7075d70a9a5abecd12e60a95215e"
+  integrity sha1-X7Ek0jadcHXXCppavs0S5gqVIV4=
+  dependencies:
+    loader-utils "^1.2.3"
+    schema-utils "^2.0.0"
+
 fill-range@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npm.taobao.org/fill-range/download/fill-range-4.0.0.tgz#d544811d428f98eb06a63dc402d2403c328c38f7"
@@ -3719,7 +3774,7 @@ mime@1.6.0:
   resolved "https://registry.npm.taobao.org/mime/download/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
   integrity sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=
 
-mime@^2.4.2:
+mime@^2.4.2, mime@^2.4.4:
   version "2.4.4"
   resolved "https://registry.npm.taobao.org/mime/download/mime-2.4.4.tgz#bd7b91135fc6b01cde3e9bae33d659b63d8857e5"
   integrity sha1-vXuRE1/GsBzePpuuM9ZZtj2IV+U=
@@ -5170,6 +5225,19 @@ readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
+redux-thunk@*:
+  version "2.3.0"
+  resolved "https://registry.npm.taobao.org/redux-thunk/download/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
+  integrity sha1-UcLBmhhe1Rh6qpotCLZm0NZGdiI=
+
+redux@^4.0.0:
+  version "4.0.4"
+  resolved "https://registry.npm.taobao.org/redux/download/redux-4.0.4.tgz#4ee1aeb164b63d6a1bcc57ae4aa0b6e6fa7a3796"
+  integrity sha1-TuGusWS2PWobzFeuSqC25vp6N5Y=
+  dependencies:
+    loose-envify "^1.4.0"
+    symbol-observable "^1.2.0"
+
 regenerate-unicode-properties@^8.0.2:
   version "8.1.0"
   resolved "https://registry.npm.taobao.org/regenerate-unicode-properties/download/regenerate-unicode-properties-8.1.0.tgz#ef51e0f0ea4ad424b77bf7cb41f3e015c70a3f0e"
@@ -5831,6 +5899,11 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
+symbol-observable@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+  integrity sha1-wiaIrtTqs83C3+rLtWFmBWCgCAQ=
+
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"
   resolved "https://registry.npm.taobao.org/tapable/download/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
@@ -6090,6 +6163,15 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npm.taobao.org/urix/download/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
+
+url-loader@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/url-loader/download/url-loader-2.1.0.tgz#bcc1ecabbd197e913eca23f5e0378e24b4412961"
+  integrity sha1-vMHsq70ZfpE+yiP14DeOJLRBKWE=
+  dependencies:
+    loader-utils "^1.2.3"
+    mime "^2.4.4"
+    schema-utils "^2.0.0"
 
 url-parse@^1.4.3:
   version "1.4.7"
