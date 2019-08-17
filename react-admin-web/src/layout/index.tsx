@@ -5,23 +5,20 @@ import BossMenu from './menu';
 
 const { Sider, Header, Content } = Layout;
 
-// @CombineModal({ ModalForm })
-// @connect(state => ({
-//   routerStore: state.router,
-//   menuList: state.user.menuInfo
-// }))
 class BasicLayout extends React.Component {
-  userName = '暂无';
-  userIcon = '';
-
   state = {
-    collapsed: false
+    collapsed: false,
+    userName: '暂无',
+    userIcon: ''
   };
 
   componentDidMount() {
     const userInfo = window.userInfo;
-    this.userIcon = userInfo.avatar;
-    this.userName = userInfo.user.name || '暂无';
+
+    this.setState({
+      userName: userInfo.user.name || '暂无',
+      userIcon: userInfo.avatar
+    });
   }
 
   toggle = () => {
@@ -100,7 +97,7 @@ class BasicLayout extends React.Component {
               <Avatar
                 style={{ backgroundColor: 'rgb(93, 101, 90)' }}
                 icon="user"
-                src={this.userIcon}
+                src={this.state.userIcon}
               />
               <div
                 style={{
@@ -115,7 +112,7 @@ class BasicLayout extends React.Component {
                     color: '#E9CC8F'
                   }}
                 >
-                  {this.userName}
+                  {this.state.userName}
                 </span>
                 <Icon
                   type="down"
