@@ -5,6 +5,26 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <div id="root"></div>
+    <link rel="stylesheet/less" type="text/css" href="/color.less" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      charset="UTF-8"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+    />
+    <!--这里link放在哪，style生成在哪里，注意样式被覆盖-->
+    <script>
+      window.less = {
+        async: false,
+        env: 'production' //production  development
+      };
+    </script>
+    <div id="app"></div>
+    <script src="https://cdn.bootcss.com/less.js/2.7.3/less.min.js"></script>
   </body>
 </html>

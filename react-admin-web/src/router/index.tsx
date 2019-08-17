@@ -12,6 +12,8 @@ import routes from './routes';
 export default class Router extends Component {
   render() {
     console.log('routes..', routes);
+    console.log('window..', window.menuList);
+
     const isLogin = true;
 
     return (
@@ -25,7 +27,7 @@ export default class Router extends Component {
                   <Route exact path="/panther" component={Home} />
                   <Route path="/panther/goods-list" component={GoodsList} />
                   <Route path="/panther/order-list" component={OrderList} />
-                  <Link to="/login">good-list</Link>
+                  <Link to="/login">login</Link>
                 </BasicLayout>
               ) : (
                 <Redirect to={{ pathname: '/login' }} />

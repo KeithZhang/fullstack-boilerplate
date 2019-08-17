@@ -1,27 +1,27 @@
-import { RouterUtils } from '@/utils';
 import { Icon, Menu } from 'antd';
+import { MenuProps } from 'antd/lib/menu';
 import _ from 'lodash';
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+
+import { RouterUtils } from '../kit';
 
 const { SubMenu, Item } = Menu;
 
-class BossMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentKey: '',
-      openKeys: '',
-      fHide: true,
-      menuMap: []
-    };
-  }
+class BossMenu extends Component<any> {
+  state = {
+    currentKey: '',
+    openKeys: [''],
+    fHide: true,
+    menuMap: []
+  };
+  menuMap = '';
 
   componentDidMount() {
     this.setMenuOpen(this.state.menuMap);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: any) {
     const { collapsed, datasource } = nextProps;
     const pathnamePre = _.get(this.props, 'pathname');
     const pathnameNext = _.get(nextProps, 'pathname');
@@ -57,10 +57,10 @@ class BossMenu extends React.Component {
     }
   }
 
-  setMenuOpen = menuMap => {
+  setMenuOpen = (menuMap: any) => {
     const currentPath = window.location.pathname;
-    let currentMap = {};
-    menuMap.map(obj => {
+    let currentMap: any = {};
+    menuMap.map((obj: any) => {
       if (currentPath === obj.value) {
         currentMap = obj;
         this.setState({
@@ -71,7 +71,7 @@ class BossMenu extends React.Component {
     });
   };
 
-  onOpenChange = openKeys => {
+  onOpenChange = (openKeys: any) => {
     if (openKeys.length === 1 || openKeys.length === 0) {
       this.setState({
         openKeys
@@ -90,7 +90,7 @@ class BossMenu extends React.Component {
     }
   };
 
-  onClick = ({ key, keyPath }) => {
+  onClick = ({ key, keyPath }: any) => {
     this.menuMap = keyPath;
     this.setState({
       currentKey: key
@@ -100,7 +100,7 @@ class BossMenu extends React.Component {
   render() {
     const { datasource } = this.props;
     const { currentKey, openKeys } = this.state;
-    const menuProps = {
+    const menuProps: MenuProps = {
       mode: 'inline',
       theme: 'dark',
       openKeys: openKeys,
@@ -111,11 +111,11 @@ class BossMenu extends React.Component {
 
     return (
       <Menu {...menuProps}>
-        {datasource.map(menu => {
+        {datasource.map((menu: any) => {
           const title = (
             <span>
-              <Icon type={'dashboard' || menu.icon} />
-              <span>{menu.name}</span>
+              <i className={menu.icon} />
+              <span className="menuName">{menu.name}</span>
             </span>
           );
           const children = _.get(menu, 'children') || []; //_.get (menu, 'childRoutes') || [];
@@ -130,8 +130,8 @@ class BossMenu extends React.Component {
             );
           }
           return (
-            <SubMenu key={menu.id} title={title}>
-              {children.map(item => {
+            <SubMenu key={menu.id} title={title} className="subTitle">
+              {children.map((item: any) => {
                 if (item.hideOfSider) {
                   return null;
                 }
