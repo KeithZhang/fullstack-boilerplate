@@ -711,33 +711,9 @@ const userInfo = {
   menuInfo: { data: [], pathMap: [] }
 };
 
-const pathMap = [
-  '/auth/user-manage',
-  '/auth/role-manage',
-  '/auth/department-manage',
-  '/auth/branch-manage',
-  '/shop/category-manage',
-  '/shop/model-manage',
-  '/lead/lead-setup',
-  '/lead/lead-list',
-  '/lead/new-leads',
-  '/appraisal/uncertainty-list',
-  '/appraisal/identified-list',
-  '/purchase/purchase-uncheck-list',
-  '/purchase/purchase-list',
-  '/warehouse/wms-list',
-  '/warehouse/branch-iventory-list',
-  '/warehouse/company-iventory-list',
-  '/warehouse/receipt-list',
-  '/finacial/payment-list',
-  '/finacial/unpaid-list',
-  '/opportunity/opportunity-list'
-];
-
 const bindGlobalDataFn = () => {
   window.menuList = menuList;
   window.userInfo = userInfo;
-  window.pathMap = pathMap;
 };
 
 export default bindGlobalDataFn;

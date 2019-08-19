@@ -13,7 +13,7 @@ class BasicLayout extends React.Component {
   };
 
   componentDidMount() {
-    const userInfo = window.userInfo;
+    const userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
 
     this.setState({
       userName: userInfo.user.name || '暂无',
@@ -54,7 +54,7 @@ class BasicLayout extends React.Component {
   ];
 
   render() {
-    const menuList = window.menuList;
+    const menuList = JSON.parse(localStorage.getItem('menuList') || '{}');
     console.log('menuList...', menuList);
 
     return (

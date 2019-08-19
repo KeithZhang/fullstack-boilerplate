@@ -14,7 +14,8 @@ export default class Router extends Component {
     console.log('routes..', routes);
     console.log('window..', window.menuList);
 
-    const isLogin = true;
+    const userInfo = JSON.parse(localStorage.getItem('userInfo') || '{}');
+    const isLogin = userInfo.user ? true : false;
 
     return (
       <BrowserRouter>
